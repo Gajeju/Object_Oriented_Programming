@@ -8,10 +8,11 @@ public class AlphabetOutput {
 		Scanner scanner = new Scanner(System.in);
 		char user_input;
 		
-		System.out.print("¾ËÆÄºª ÇÑ ¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä>>");
+		System.out.print("ì•ŒíŒŒë²³ í•œ ë¬¸ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”>>");
 		user_input = scanner.next().charAt(0);
 		
 		for (char i = 97; i <= user_input; i++)	{
+			
 			
 			for (char j = i; j <= user_input; j++ )	{
 				System.out.print(j);
