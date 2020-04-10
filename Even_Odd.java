@@ -7,19 +7,20 @@ public class Even_Odd {
 		Scanner scanner = new Scanner(System.in);
 		String user_input;
 		
-		System.out.print("Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä>>");
+		System.out.print("ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”>>");
 		user_input = scanner.nextLine();
 		int number;
+		
 		
 		try {
 			number = Integer.parseInt(user_input);
 			if (number % 2 == 0)
-				System.out.println("Â¦¼ö");
+				System.out.println("ì§ìˆ˜");
 			else
-				System.out.println("È¦¼ö");
+				System.out.println("í™€ìˆ˜");
 			
 		} catch (NumberFormatException e) {
-			System.out.println("¼ö¸¦ ÀÔ·ÂÇÏÁö ¾Ê¾Æ ÇÁ·Î±×·¥ Á¾·áÇÕ´Ï´Ù");	
+			System.out.println("ìˆ˜ë¥¼ ì…ë ¥í•˜ì§€ ì•Šì•„ í”„ë¡œê·¸ë¨ ì¢…ë£Œí•©ë‹ˆë‹¤");	
 		}
 	}
 }
