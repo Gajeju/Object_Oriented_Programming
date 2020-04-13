@@ -1,7 +1,7 @@
 package coin;
 import java.util.Scanner;
 
-//2015108223 ÀüÀÚ°øÇÐ°ú ±èµ¿Çö
+//2015108223 ì „ìžê³µí•™ê³¼ ê¹€ë™í˜„
 
 public class Coin {
 
@@ -10,26 +10,27 @@ public class Coin {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		//--------------»ç¿ë º¯¼ö--------------
+		
+		//--------------ì‚¬ìš© ë³€ìˆ˜--------------
 		int user_input_money;
 		int coinArr[] = {0,0,0,0,0,0,0};
 		int coinValue[] = {50000, 10000, 1000, 500 ,100 ,10 ,1};
-		String coinValueStr[] = {"¿À¸¸", "¸¸", "Ãµ", "500", "100", "10", "1"};
+		String coinValueStr[] = {"ì˜¤ë§Œ", "ë§Œ", "ì²œ", "500", "100", "10", "1"};
 			
-		//--------------ÀÔ  ·Â--------------
-		System.out.print("µ·ÀÇ ¾×¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä>>");
+		//--------------ìž…  ë ¥--------------
+		System.out.print("ëˆì˜ ì•¡ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”>>");
 		user_input_money = scanner.nextInt();
 		
-		//--------------°è  »ê--------------
+		//--------------ê³„  ì‚°--------------
 		for (int i = 0; i < 7; i++) {
 			coinArr[i] = user_input_money / coinValue[i];
 			user_input_money = user_input_money - (coinArr[i] * coinValue[i]);
 			
 		}
 		
-		//--------------Ãâ  ·Â--------------
+		//--------------ì¶œ  ë ¥--------------
 		for (int i = 0; i < 7; i++) {
-			System.out.print(coinValueStr[i] + "¿ø" + coinArr[i] + "°³");
+			System.out.print(coinValueStr[i] + "ì›" + coinArr[i] + "ê°œ");
 			
 			if (i != 6) {
 				System.out.print(", ");
