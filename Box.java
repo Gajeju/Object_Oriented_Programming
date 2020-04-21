@@ -1,19 +1,21 @@
 package box;
 
+//2015108223 ì „ìê³µí•™ê³¼ ê¹€ë™í˜„
+
 public class Box {
 	private int width, height;
 	private char fillchar;
 	
-	public Box() {			//10x1 ¹Ú½º
+	public Box() {			//10x1 ë°•ìŠ¤
 		this(10,1);
 	}
 	
-	public Box(int width, int height) {		//³Êºñ, ³ôÀÌ °¡Áø »ı¼ºÀÚ
+	public Box(int width, int height) {		//ë„ˆë¹„, ë†’ì´ ê°€ì§„ ìƒì„±ì
 		this.width = width;
 		this.height = height;
 	}
 	
-	public void draw() {		//¹Ú½º¸¦ ±×¸®´Â ¸Ş¼Òµå
+	public void draw() {		//ë°•ìŠ¤ë¥¼ ê·¸ë¦¬ëŠ” ë©”ì†Œë“œ
 		for (int i = 0; i < height; i++)
 		{
 				for (int j = 0; j < width; j++) {
@@ -23,7 +25,7 @@ public class Box {
 		}
 	}
 	
-	public void fill(char c) {		//¹®ÀÚ ¼³Á¤
+	public void fill(char c) {		//ë¬¸ì ì„¤ì •
 		fillchar = c;
 	}
 	
