@@ -25,6 +25,7 @@ public class Box {
 		}
 	}
 	
+	
 	public void fill(char c) {		//문자 설정
 		fillchar = c;
 	}
