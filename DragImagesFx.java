@@ -8,21 +8,22 @@ import java.net.URL;
 public class DragImagesFx extends JFrame {
 	public Image img;
 
-	 URL imageURL[] = {														//jarÆÄÀÏ¿¡ ÀÌ¹ÌÁö¸¦ Æ÷ÇÔ½ÃÅ°±â À§ÇÑ ¸®¼Ò½º
+	 URL imageURL[] = {														//jaríŒŒì¼ì— ì´ë¯¸ì§€ë¥¼ í¬í•¨ì‹œí‚¤ê¸° ìœ„í•œ ë¦¬ì†ŒìŠ¤
 			 getClass().getClassLoader().getResource("festival.jpg"),
 			 getClass().getClassLoader().getResource("capstone.jpg"),
 			 getClass().getClassLoader().getResource("creative.jpg"),
 			 getClass().getClassLoader().getResource("image.jpg"),
 	 };
 	
+	
 	public ImageIcon imageIcon [] = {new ImageIcon(imageURL[0]),
 									 new ImageIcon(imageURL[1]),
 									 new ImageIcon(imageURL[2]),
 									 new ImageIcon(imageURL[3])};
 	
-	//---------- »ı¼ºÀÚ ----------
+	//---------- ìƒì„±ì ----------
 	public DragImagesFx() {
-		setTitle("³»¸¾´ë·Î ÀÌ¹ÌÁö Å©±â º¯°æ");
+		setTitle("ë‚´ë§˜ëŒ€ë¡œ ì´ë¯¸ì§€ í¬ê¸° ë³€ê²½");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		creatMenu();
@@ -31,15 +32,15 @@ public class DragImagesFx extends JFrame {
 		setVisible(true);
 	}
 	
-	//---------- ¸Ş´º »ı¼º ----------
+	//---------- ë©”ë‰´ ìƒì„± ----------
 		public void creatMenu() {
-			JMenuBar mb = new JMenuBar();											//¸Ş´º¹Ù
-			mb.setBackground(Color.CYAN);											//¸Ş´º¹Ù »öÁöÁ¤
-			JMenu selectPaintMenu = new JMenu("±×¸²¼±ÅÃ");								//¸Ş´º
+			JMenuBar mb = new JMenuBar();											//ë©”ë‰´ë°”
+			mb.setBackground(Color.CYAN);											//ë©”ë‰´ë°” ìƒ‰ì§€ì •
+			JMenu selectPaintMenu = new JMenu("ê·¸ë¦¼ì„ íƒ");								//ë©”ë‰´
 			
-			//±×¸² ¸Ş´º ¾ÆÀÌÅÆ
-			JMenuItem [] menuItem = new JMenuItem [4];								//±×¸² ¸Ş´º ¾ÆÀÌÅÆ
-			String itemTitle[] = {"°øÇĞÆä½ºÆ¼¹ú", "Ä¸½ºÅæ", "Ã¢ÀÇ°æÁø", "»çÁø"};				//¸Ş´º ¾ÆÀÌÅÆÀÇ Å¸ÀÌÆ²
+			//ê·¸ë¦¼ ë©”ë‰´ ì•„ì´íƒ¬
+			JMenuItem [] menuItem = new JMenuItem [4];								//ê·¸ë¦¼ ë©”ë‰´ ì•„ì´íƒ¬
+			String itemTitle[] = {"ê³µí•™í˜ìŠ¤í‹°ë²Œ", "ìº¡ìŠ¤í†¤", "ì°½ì˜ê²½ì§„", "ì‚¬ì§„"};				//ë©”ë‰´ ì•„ì´íƒ¬ì˜ íƒ€ì´í‹€
 			
 			MenuActionListener menuListener = new MenuActionListener();				//ActionListener
 			
@@ -47,38 +48,38 @@ public class DragImagesFx extends JFrame {
 				menuItem[i] = new JMenuItem(itemTitle[i]);
 				menuItem[i].addActionListener(menuListener);
 				selectPaintMenu.add(menuItem[i]);
-				menuItem[i].setBackground(Color.YELLOW);							//¸Ş´º¾ÆÀÌÅÆ »öÁöÁ¤
+				menuItem[i].setBackground(Color.YELLOW);							//ë©”ë‰´ì•„ì´íƒ¬ ìƒ‰ì§€ì •
 			}
 			
-			//Á¾·á ¸Ş´º ¾ÆÀÌÅÆ (»õ·Î¿î »çÁøÀÌ Ãß°¡µÉ °æ¿ì¿¡µµ Ç×»ó Á¾·á ¸Ş´º¸¦ °¡Àå ¾Æ·¡¿¡ À§Ä¡½ÃÅ°±â À§ÇÏ¿© µû·Î »©³õ¾Ò½À´Ï´Ù)
+			//ì¢…ë£Œ ë©”ë‰´ ì•„ì´íƒ¬ (ìƒˆë¡œìš´ ì‚¬ì§„ì´ ì¶”ê°€ë  ê²½ìš°ì—ë„ í•­ìƒ ì¢…ë£Œ ë©”ë‰´ë¥¼ ê°€ì¥ ì•„ë˜ì— ìœ„ì¹˜ì‹œí‚¤ê¸° ìœ„í•˜ì—¬ ë”°ë¡œ ë¹¼ë†“ì•˜ìŠµë‹ˆë‹¤)
 			ExitActionListener exitListener = new ExitActionListener();
-			JMenuItem exitItem = new JMenuItem("Á¾·á");
+			JMenuItem exitItem = new JMenuItem("ì¢…ë£Œ");
 			exitItem.setBackground(Color.YELLOW);
 			exitItem.addActionListener(exitListener);
 			
 			selectPaintMenu.addSeparator();
 			selectPaintMenu.add(exitItem);		
 			
-			//¸Ş´º¹Ù µî·Ï
+			//ë©”ë‰´ë°” ë“±ë¡
 			mb.add(selectPaintMenu);
 			setJMenuBar(mb);
 		}
 		
-		//---------- ±×¸²¼±ÅÃ ActionListener ----------
+		//---------- ê·¸ë¦¼ì„ íƒ ActionListener ----------
 		class MenuActionListener implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				String cmd = e.getActionCommand();
 				switch(cmd) {
-					case "°øÇĞÆä½ºÆ¼¹ú" :
-						img = imageIcon[0].getImage();			//¸Ş´º ¼±ÅÃ½Ã Àü¿ªº¯¼ö img¿¡ µé¾î°¥ »çÁø ¼±ÅÃ
+					case "ê³µí•™í˜ìŠ¤í‹°ë²Œ" :
+						img = imageIcon[0].getImage();			//ë©”ë‰´ ì„ íƒì‹œ ì „ì—­ë³€ìˆ˜ imgì— ë“¤ì–´ê°ˆ ì‚¬ì§„ ì„ íƒ
 						break;
-					case "Ä¸½ºÅæ" :
+					case "ìº¡ìŠ¤í†¤" :
 						img = imageIcon[1].getImage();
 						break;
-					case "Ã¢ÀÇ°æÁø" :
+					case "ì°½ì˜ê²½ì§„" :
 						img = imageIcon[2].getImage();
 						break;
-					case "»çÁø" :
+					case "ì‚¬ì§„" :
 						img = imageIcon[3].getImage();
 						break;
 				}
@@ -86,7 +87,7 @@ public class DragImagesFx extends JFrame {
 			
 		}
 		
-		//---------- Á¾·á ActionListener ----------
+		//---------- ì¢…ë£Œ ActionListener ----------
 		class ExitActionListener implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
@@ -94,7 +95,7 @@ public class DragImagesFx extends JFrame {
 		}
 	
 	
-	//---------- °¡º¯ ÀÌ¹ÌÁö¸¦ ´ã±â À§ÇÑ JPanel ----------
+	//---------- ê°€ë³€ ì´ë¯¸ì§€ë¥¼ ë‹´ê¸° ìœ„í•œ JPanel ----------
 	class MyPanel extends JPanel {
 		private Point start = null, end = null; 
 
@@ -112,7 +113,7 @@ public class DragImagesFx extends JFrame {
 
 			public void mouseDragged(MouseEvent e) {
 				end = e.getPoint();
-				repaint(); // ÆĞ³ÎÀÇ ±×¸®±â ¿äÃ» ÁÖ¸ñ
+				repaint(); // íŒ¨ë„ì˜ ê·¸ë¦¬ê¸° ìš”ì²­ ì£¼ëª©
 			}
 		}
 
